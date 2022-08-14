@@ -9,4 +9,4 @@ def segundaVista(request):
 
 def dia(request):
     variable = datetime.datetime.now()
-    return HttpResponse("Hoy es: " + str(variable))
+    return HttpResponse(f"Hoy es: {str(variable)}")
