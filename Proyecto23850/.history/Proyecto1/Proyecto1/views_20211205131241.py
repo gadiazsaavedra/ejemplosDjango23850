@@ -18,9 +18,8 @@ def apellido(request, ape):
     return HttpResponse(f"Mi apellido es {ape}, y soy muy bueno .. <br><br>.. Por lo menos hoy: {fecha}")
 
 def probandoTemplate(request):
-    miHTML = open("C:/Users/gdiaz/OneDrive/GOOGLE DRIVE/Gustavo/Curso programacion/Coder House/Proyecto23850/Proyecto1/Proyecto1/Plantillas/template1.html")
-    plantilla = Template(miHTML.read())
-    miHTML.close()
+    with open("C:/Users/gdiaz/OneDrive/GOOGLE DRIVE/Gustavo/Curso programacion/Coder House/Proyecto23850/Proyecto1/Proyecto1/Plantillas/template1.html") as miHTML:
+        plantilla = Template(miHTML.read())
     miContexto = Context()
     documento = plantilla.render(miContexto)
     return 
